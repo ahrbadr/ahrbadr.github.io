@@ -1,0 +1,224 @@
+/* style.css – clean, modern, responsive */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    background: #eef2f5;
+    font-family: 'Segoe UI', Roboto, system-ui, -apple-system, sans-serif;
+    line-height: 1.5;
+    color: #1e2b3c;
+    padding: 2rem 1rem;
+  }
+  
+  .container {
+    max-width: 1000px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 24px;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+    padding: 2.2rem 2.5rem;
+  }
+  
+  /* header + contact */
+  header {
+    margin-bottom: 2rem;
+    border-bottom: 2px solid #dde3ed;
+    padding-bottom: 1.2rem;
+  }
+  
+  h1 {
+    font-size: 2.5rem;
+    font-weight: 600;
+    letter-spacing: -0.5px;
+    color: #0a2942;
+    margin-bottom: 0.4rem;
+  }
+  
+  .contact-bar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem 2rem;
+    align-items: center;
+    font-size: 0.98rem;
+    color: #2c3e50;
+  }
+  
+  .contact-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    white-space: nowrap;
+  }
+  
+  .contact-item i {
+    width: 1.1rem;
+    color: #2c7da0;
+    font-size: 1rem;
+    text-align: center;
+  }
+  
+  .contact-item a {
+    color: #1d4e6f;
+    text-decoration: none;
+    font-weight: 500;
+    border-bottom: 1px dotted transparent;
+    transition: border-color 0.1s;
+  }
+  
+  .contact-item a:hover {
+    border-bottom: 1px dotted #1d4e6f;
+  }
+  
+  /* sections */
+  .section {
+    margin-bottom: 2.2rem;
+  }
+  
+  .section h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #0f3b5c;
+    border-bottom: 2px solid #cbd5e1;
+    padding-bottom: 0.25rem;
+    margin-bottom: 1.2rem;
+    letter-spacing: -0.3px;
+  }
+  
+  /* shared item headers (job, edu, activity) */
+  .item-header {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 0.2rem;
+  }
+  
+  .item-title {
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: #0b2b44;
+  }
+  
+  .item-subtitle {
+    font-weight: 500;
+    color: #2e577a;
+    margin-bottom: 0.2rem;
+    font-size: 1rem;
+  }
+  
+  .date {
+    font-weight: 400;
+    color: #5e6f88;
+    background: #eaf0f8;
+    padding: 0.2rem 0.8rem;
+    border-radius: 30px;
+    font-size: 0.85rem;
+    letter-spacing: 0.2px;
+    white-space: nowrap;
+  }
+  
+  /* bullet lists */
+  ul {
+    list-style: disc;
+    padding-left: 1.4rem;
+    margin: 0.5rem 0 1.2rem 0;
+  }
+  
+  li {
+    margin-bottom: 0.3rem;
+    color: #253c5c;
+  }
+  
+  /* spacing for items */
+  .job-item, .activity-item, .edu-item {
+    margin-bottom: 1.5rem;
+  }
+  
+  /* skills grid */
+  .skills-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.8rem 2.5rem;
+    background: #f7faff;
+    padding: 1rem 1.4rem;
+    border-radius: 18px;
+    margin-top: 0.2rem;
+  }
+  
+  .skills-grid div {
+    font-size: 1rem;
+    color: #17334f;
+  }
+  
+  .skills-grid strong {
+    font-weight: 600;
+    color: #0a2c47;
+  }
+  
+  /* certification list: two columns on wide screens */
+  .cert-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.5rem 2rem;
+    list-style: disc;
+    padding-left: 1.2rem;
+    margin-top: 0.5rem;
+  }
+  
+  .cert-list li {
+    margin-bottom: 0.25rem;
+    break-inside: avoid;
+  }
+  
+  /* footer */
+  footer {
+    margin-top: 2rem;
+    text-align: center;
+    font-size: 0.9rem;
+    color: #768a9d;
+    border-top: 1px solid #dde3ed;
+    padding-top: 1.2rem;
+  }
+  
+  /* responsive adjustments */
+  @media (max-width: 650px) {
+    .container {
+      padding: 1.5rem;
+    }
+    h1 {
+      font-size: 2rem;
+    }
+    .contact-bar {
+      gap: 0.8rem 1.2rem;
+    }
+    .item-header {
+      flex-direction: column;
+      gap: 0.2rem;
+    }
+    .date {
+      align-self: flex-start;
+    }
+    .skills-grid {
+      flex-direction: column;
+      gap: 0.8rem;
+    }
+    .cert-list {
+      grid-template-columns: 1fr; /* stack on mobile */
+    }
+  }
+  
+  @media (max-width: 420px) {
+    body {
+      padding: 0.5rem;
+    }
+    .container {
+      padding: 1rem;
+    }
+    .contact-bar {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
