@@ -4,160 +4,594 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Ahmed Reda Badr · bioinformatics portfolio</title>
-  <!-- Font Awesome 5 (free) for icons -->
+  <!-- Font Awesome 6 (free) -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-  <link rel="stylesheet" href="style.css">
+  <style>
+    /* ===== style.css ===== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #f4f7fc;
+      font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      line-height: 1.6;
+      color: #1a2b3e;
+      padding: 2rem 1rem;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      background: rgba(255,255,255,0.8);
+      backdrop-filter: blur(2px);
+      background: #ffffff;
+      border-radius: 2.5rem;
+      box-shadow: 0 20px 40px -10px rgba(18, 50, 80, 0.15);
+      padding: 2.5rem 2.8rem;
+    }
+
+    /* ----- hero header ----- */
+    .hero {
+      text-align: center;
+      margin-bottom: 2.5rem;
+      border-bottom: 2px solid #e4ecf5;
+      padding-bottom: 1.8rem;
+    }
+
+    .hero h1 {
+      font-size: 3.2rem;
+      font-weight: 700;
+      letter-spacing: -1px;
+      background: linear-gradient(145deg, #0b2b44, #1f4b6e);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 0.3rem;
+    }
+
+    .subhead {
+      font-size: 1.3rem;
+      font-weight: 400;
+      color: #3a5e7a;
+      margin-bottom: 1.2rem;
+    }
+
+    .contact-links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1.8rem 2.5rem;
+      font-size: 1rem;
+    }
+
+    .contact-links a {
+      color: #1d4f73;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: 500;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.2s;
+    }
+
+    .contact-links a:hover {
+      border-bottom-color: #1d4f73;
+    }
+
+    .contact-links i {
+      color: #2c7da0;
+      width: 1.2rem;
+      font-size: 1.1rem;
+    }
+
+    /* ----- about / summary ----- */
+    .about {
+      background: #f0f6fe;
+      padding: 1.5rem 2rem;
+      border-radius: 2rem;
+      margin-bottom: 2.5rem;
+      font-size: 1.1rem;
+      border-left: 5px solid #1e6f9f;
+      box-shadow: 0 6px 12px rgba(0,30,60,0.04);
+    }
+
+    .about p {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    /* ----- section headings ----- */
+    section h2 {
+      font-size: 2rem;
+      font-weight: 600;
+      color: #0a3147;
+      margin-bottom: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    section h2 i {
+      color: #1e6f9f;
+      font-size: 1.8rem;
+    }
+
+    /* ----- project cards (featured) ----- */
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.8rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .project-card {
+      background: white;
+      border-radius: 1.8rem;
+      padding: 1.8rem 1.5rem;
+      box-shadow: 0 8px 24px rgba(0,45,80,0.06);
+      border: 1px solid #e2edf5;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .project-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 18px 30px -8px rgba(20,70,110,0.14);
+    }
+
+    .project-card i {
+      font-size: 2.6rem;
+      color: #1f6e9f;
+      margin-bottom: 1rem;
+    }
+
+    .project-card h3 {
+      font-size: 1.4rem;
+      font-weight: 600;
+      margin-bottom: 0.75rem;
+      color: #113853;
+    }
+
+    .project-card p {
+      color: #2a4055;
+      font-size: 0.98rem;
+    }
+
+    /* ----- experience / timeline style ----- */
+    .experience-item {
+      margin-bottom: 2.2rem;
+      padding-left: 1rem;
+      border-left: 4px solid #cbddee;
+    }
+
+    .exp-header {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      justify-content: space-between;
+      margin-bottom: 0.3rem;
+    }
+
+    .exp-title {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: #0b3b5c;
+    }
+
+    .exp-company {
+      font-weight: 600;
+      color: #2c5a7a;
+      font-size: 1.1rem;
+    }
+
+    .exp-date {
+      background: #e1effb;
+      color: #134b6b;
+      padding: 0.2rem 1rem;
+      border-radius: 30px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      letter-spacing: 0.2px;
+      white-space: nowrap;
+    }
+
+    .exp-desc {
+      list-style: none;
+      margin-top: 0.8rem;
+    }
+
+    .exp-desc li {
+      margin-bottom: 0.4rem;
+      display: flex;
+      gap: 10px;
+    }
+
+    .exp-desc li i {
+      color: #1f6f9f;
+      font-size: 0.85rem;
+      margin-top: 0.3rem;
+      width: 1.2rem;
+    }
+
+    /* education & extracurricular cards */
+    .edu-card {
+      background: #f6faff;
+      border-radius: 1.5rem;
+      padding: 1.2rem 1.8rem;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1rem;
+      border: 1px solid #dae9f2;
+    }
+
+    .edu-left h3 {
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: #113853;
+    }
+
+    .edu-left p {
+      color: #365f7c;
+    }
+
+    .edu-date {
+      background: #d9e9f5;
+      border-radius: 30px;
+      padding: 0.3rem 1.2rem;
+      font-weight: 500;
+      color: #0b3e5c;
+    }
+
+    /* extracurricular with bullet details */
+    .extra-item {
+      background: white;
+      border-radius: 1.5rem;
+      padding: 1.3rem 1.8rem;
+      margin-bottom: 1.2rem;
+      border: 1px solid #e0eefa;
+    }
+
+    .extra-header {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 0.5rem;
+    }
+
+    .extra-name {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: #113853;
+    }
+
+    .extra-role {
+      font-weight: 500;
+      color: #2e6a95;
+    }
+
+    .extra-date {
+      color: #466b88;
+      background: #ecf3fa;
+      padding: 0.2rem 1rem;
+      border-radius: 30px;
+      font-size: 0.85rem;
+    }
+
+    .extra-desc {
+      list-style: none;
+      margin-top: 0.6rem;
+    }
+
+    .extra-desc li {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 0.3rem;
+    }
+
+    .extra-desc li i {
+      color: #1f6f9f;
+      font-size: 0.8rem;
+      margin-top: 0.4rem;
+      width: 1.2rem;
+    }
+
+    /* skills as chips */
+    .skills-panel {
+      background: #f2f8ff;
+      border-radius: 2rem;
+      padding: 1.5rem 2rem;
+    }
+
+    .skill-group {
+      margin-bottom: 1.3rem;
+    }
+
+    .skill-group h3 {
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: #123f5c;
+      margin-bottom: 0.8rem;
+    }
+
+    .skill-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+    }
+
+    .skill-tag {
+      background: white;
+      border-radius: 40px;
+      padding: 0.4rem 1.4rem;
+      font-weight: 500;
+      color: #123f5c;
+      border: 1px solid #bdd8ec;
+      box-shadow: 0 2px 6px rgba(0,30,50,0.04);
+      font-size: 0.95rem;
+    }
+
+    .skill-tag i {
+      margin-right: 6px;
+      color: #1f6f9f;
+    }
+
+    /* certification grid */
+    .cert-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 1rem;
+    }
+
+    .cert-item {
+      background: #f5faff;
+      border-radius: 1.5rem;
+      padding: 1rem 1.4rem;
+      border: 1px solid #cddef0;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      transition: 0.1s ease;
+    }
+
+    .cert-item i {
+      font-size: 1.6rem;
+      color: #1e6f9f;
+    }
+
+    .cert-info {
+      font-weight: 500;
+      color: #123f5c;
+      line-height: 1.3;
+    }
+
+    .cert-info small {
+      display: block;
+      font-weight: 400;
+      color: #456e8c;
+      font-size: 0.8rem;
+    }
+
+    /* footer */
+    footer {
+      margin-top: 3rem;
+      text-align: center;
+      font-size: 0.9rem;
+      color: #6a7f99;
+      border-top: 1px dashed #c6d9eb;
+      padding-top: 1.8rem;
+    }
+
+    /* responsive */
+    @media (max-width: 650px) {
+      .container {
+        padding: 1.5rem;
+      }
+      .hero h1 {
+        font-size: 2.5rem;
+      }
+      .contact-links {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.8rem;
+      }
+      .exp-header {
+        flex-direction: column;
+        gap: 0.4rem;
+      }
+    }
+  </style>
 </head>
 <body>
   <div class="container">
-    <!-- header: name + contact row -->
-    <header>
+    <!-- HERO section (name + contact) -->
+    <header class="hero">
       <h1>Ahmed Reda Badr</h1>
-      <div class="contact-bar">
-        <span class="contact-item"><i class="fas fa-phone-alt"></i> (+20) 1119441998</span>
-        <span class="contact-item"><i class="fas fa-envelope"></i> <a href="mailto:Ah.Badr@nu.edu.eg">Ah.Badr@nu.edu.eg</a></span>
-        <span class="contact-item"><i class="fab fa-github"></i> <a href="https://github.com/ahrbadr" target="_blank">github/ahrbadr</a></span>
-        <span class="contact-item"><i class="fab fa-linkedin"></i> <a href="https://www.linkedin.com/in/ahmed-badr-a8aa90188/" target="_blank">linkedin/in/ahmed-badr</a></span>
+      <div class="subhead">senior bioinformatician · ML · protein engineering</div>
+      <div class="contact-links">
+        <a href="tel:+201119441998"><i class="fas fa-phone-alt"></i> (+20) 1119441998</a>
+        <a href="mailto:Ah.Badr@nu.edu.eg"><i class="fas fa-envelope"></i> Ah.Badr@nu.edu.eg</a>
+        <a href="https://github.com/ahrbadr" target="_blank"><i class="fab fa-github"></i> github/ahrbadr</a>
+        <a href="https://linkedin.com/in/ahmed-badr" target="_blank"><i class="fab fa-linkedin"></i> linkedin/in/ahmed-badr</a>
       </div>
     </header>
 
-    <!-- EDUCATION -->
-    <section class="section">
-      <h2>EDUCATION</h2>
-      <div class="edu-item">
-        <div class="item-header">
-          <span class="item-title">Bachelor’s degree in Pharmaceutical Sciences</span>
-          <span class="date">September 2014 – September 2019</span>
+    <!-- short personal summary (portfolio flavour) -->
+    <section class="about">
+      <p><i class="fas fa-quote-left" style="color:#1e6f9f; opacity:0.5; margin-right:6px;"></i> 
+      Bioinformatician bridging wet lab & computation. Experienced in machine learning, protein engineering, and cancer research. I turn biological data into actionable insights — from pipeline design to R&D collaboration.
+      </p>
+    </section>
+
+    <!-- FEATURED PROJECTS (card style) – using exact bullet points -->
+    <section>
+      <h2><i class="fas fa-laptop-code"></i> Featured projects</h2>
+      <div class="project-grid">
+        <div class="project-card">
+          <i class="fas fa-dna"></i>
+          <h3>Genomic & proteomic pipelines</h3>
+          <p>Developed and implemented data analysis pipelines for large‑scale genomic and proteomic datasets.</p>
         </div>
-        <div class="item-subtitle">Tanta University, Tanta, Egypt</div>
+        <div class="project-card">
+          <i class="fas fa-brain"></i>
+          <h3>ML for biological data</h3>
+          <p>Integrated machine learning models to enhance predictive accuracy in biological data interpretation.</p>
+        </div>
+        <div class="project-card">
+          <i class="fas fa-microscope"></i>
+          <h3>Protein engineering & bioproduction</h3>
+          <p>Contributed to interdisciplinary projects aiming to optimize protein engineering and increase bioproduction efficiency.</p>
+        </div>
       </div>
     </section>
 
-    <!-- WORK EXPERIENCE -->
-    <section class="section">
-      <h2>WORK EXPERIENCE</h2>
+    <!-- WORK EXPERIENCE (detailed) -->
+    <section>
+      <h2><i class="fas fa-briefcase"></i> Experience</h2>
 
-      <!-- Senior Bioinformatician -->
-      <div class="job-item">
-        <div class="item-header">
-          <span class="item-title">Senior Bioinformatician</span>
-          <span class="date">July 2021 – Present</span>
+      <div class="experience-item">
+        <div class="exp-header">
+          <span class="exp-title">Senior Bioinformatician</span>
+          <span class="exp-date">July 2021 – Present</span>
         </div>
-        <div class="item-subtitle">Proteinea</div>
-        <ul>
-          <li>Applied machine learning and computational biology techniques to analyze and interpret large‑scale biological data.</li>
-          <li>Employed data analysis pipelines and bioinformatics tools to support protein engineering and bioproduction.</li>
-          <li>Collaborated with cross‑functional teams to leverage bioinformatics insights for R&amp;D initiatives.</li>
+        <div class="exp-company">Proteinea</div>
+        <ul class="exp-desc">
+          <li><i class="fas fa-chevron-right"></i> Applied machine learning and computational biology techniques to analyze and interpret large‑scale biological data.</li>
+          <li><i class="fas fa-chevron-right"></i> Employed data analysis pipelines and bioinformatics tools to support protein engineering and bioproduction.</li>
+          <li><i class="fas fa-chevron-right"></i> Collaborated with cross‑functional teams to leverage bioinformatics insights for R&D initiatives.</li>
         </ul>
       </div>
 
-      <!-- Shift Manager Pharmacist -->
-      <div class="job-item">
-        <div class="item-header">
-          <span class="item-title">Shift Manager Pharmacist</span>
-          <span class="date">June 2019 – July 2021</span>
+      <div class="experience-item">
+        <div class="exp-header">
+          <span class="exp-title">Shift Manager Pharmacist</span>
+          <span class="exp-date">June 2019 – July 2021</span>
         </div>
-        <div class="item-subtitle">Community Pharmacy</div>
-        <ul>
-          <li>Managed pharmacy operations, ensuring accurate prescription dispensation and maintaining high‑quality patient care.</li>
-          <li>Oversaw inventory management, staff coordination, and adherence to healthcare regulations.</li>
+        <div class="exp-company">Community Pharmacy</div>
+        <ul class="exp-desc">
+          <li><i class="fas fa-chevron-right"></i> Managed pharmacy operations, ensuring accurate prescription dispensation and maintaining high‑quality patient care.</li>
+          <li><i class="fas fa-chevron-right"></i> Oversaw inventory management, staff coordination, and adherence to healthcare regulations.</li>
         </ul>
       </div>
 
-      <!-- Research Trainee, CECR -->
-      <div class="job-item">
-        <div class="item-header">
-          <span class="item-title">Research Trainee</span>
-          <span class="date">October 2019 – April 2020</span>
+      <div class="experience-item">
+        <div class="exp-header">
+          <span class="exp-title">Research Trainee</span>
+          <span class="exp-date">Oct 2019 – April 2020</span>
         </div>
-        <div class="item-subtitle">CECR (Center of Excellence for Cancer Research)</div>
-        <ul>
-          <li>Assisted in cancer‑related research projects, performing laboratory experiments and supporting data collection.</li>
-          <li>Gained exposure to cutting‑edge diagnostics and therapeutics, contributing to research documentation and data interpretation.</li>
-        </ul>
-      </div>
-    </section>
-
-    <!-- PROJECTS -->
-    <section class="section">
-      <h2>PROJECTS</h2>
-      <ul>
-        <li>Developed and implemented data analysis pipelines for large‑scale genomic and proteomic datasets.</li>
-        <li>Integrated machine learning models to enhance predictive accuracy in biological data interpretation.</li>
-        <li>Contributed to interdisciplinary projects aiming to optimize protein engineering and increase bioproduction efficiency.</li>
-      </ul>
-    </section>
-
-    <!-- EXTRACURRICULAR ACTIVITIES -->
-    <section class="section">
-      <h2>EXTRACURRICULAR ACTIVITIES</h2>
-
-      <!-- University Theatre -->
-      <div class="activity-item">
-        <div class="item-header">
-          <span class="item-title">University Theatre | Stage Director</span>
-          <span class="date">2017 – 2019</span>
-        </div>
-        <ul>
-          <li>Led stage performances, coordinating actors and technical crew to produce engaging theatrical presentations.</li>
-          <li>Enhanced leadership, teamwork, and creative problem‑solving skills through artistic direction.</li>
-        </ul>
-      </div>
-
-      <!-- EPSF -->
-      <div class="activity-item">
-        <div class="item-header">
-          <span class="item-title">EPSF (Egyptian Pharmaceutical Students’ Federation) | Public Health Member</span>
-          <span class="date">2015 – 2017</span>
-        </div>
-        <ul>
-          <li>Participated in public health campaigns and community outreach programs.</li>
-          <li>Contributed to projects that raise awareness of health, improve patient education, and have social impact.</li>
-        </ul>
-      </div>
-
-      <!-- MEC -->
-      <div class="activity-item">
-        <div class="item-header">
-          <span class="item-title">MEC (Mechanical Engineering Club) | Team Member "Robotics"</span>
-          <span class="date">2014 – 2015</span>
-        </div>
-        <ul>
-          <li>Collaborated on robotics projects, applying interdisciplinary engineering principles and programming.</li>
+        <div class="exp-company">CECR (Center of Excellence for Cancer Research)</div>
+        <ul class="exp-desc">
+          <li><i class="fas fa-chevron-right"></i> Assisted in cancer‑related research projects, performing laboratory experiments and supporting data collection.</li>
+          <li><i class="fas fa-chevron-right"></i> Gained exposure to cutting‑edge diagnostics and therapeutics, contributing to research documentation and data interpretation.</li>
         </ul>
       </div>
     </section>
 
-    <!-- KEY SKILLS -->
-    <section class="section">
-      <h2>KEY SKILLS</h2>
-      <div class="skills-grid">
-        <div><strong>Programming languages:</strong> Python, R</div>
-        <div><strong>Simulating &amp; analytical tools:</strong> Bioinformatics tools, data visualization, GIT</div>
-        <div><strong>Languages:</strong> Arabic (native), English (C1 advanced)</div>
+    <!-- EDUCATION + EXTRACURRICULAR blended -->
+    <section>
+      <h2><i class="fas fa-graduation-cap"></i> Education</h2>
+      <div class="edu-card">
+        <div class="edu-left">
+          <h3>Bachelor’s degree in Pharmaceutical Sciences</h3>
+          <p>Tanta University, Tanta, Egypt</p>
+        </div>
+        <div class="edu-date">2014 – 2019</div>
       </div>
     </section>
 
-    <!-- ONLINE CERTIFICATIONS -->
-    <section class="section">
-      <h2>ONLINE CERTIFICATIONS</h2>
-      <ul class="cert-list">
-        <li>Genomic Data Science Specialization – Johns Hopkins University</li>
-        <li>Bioinformatics Specialization – University of California, San Diego</li>
-        <li>Machine Learning – Stanford University</li>
-        <li>Plant Bioinformatic Methods Specialization – University of Toronto</li>
-        <li>Big Data, Genes, and Medicine – The State University of New York</li>
-        <li>Data Science: Foundations using R Specialization – Johns Hopkins University</li>
-        <li>Introduction to Systems Biology – ICAHN School of Medicine at Mount Sinai</li>
-        <li>Statistics with R Specialization – Duke University</li>
-        <li>Deep Learning Specialization – DeepLearning.AI</li>
-        <li>Immunology: The Immune System and its Failures Specialization – Imperial College London</li>
-      </ul>
+    <section>
+      <h2><i class="fas fa-puzzle-piece"></i> Extracurricular activities</h2>
+
+      <div class="extra-item">
+        <div class="extra-header">
+          <span class="extra-name">University Theatre</span>
+          <span class="extra-role">Stage Director</span>
+          <span class="extra-date">2017 – 2019</span>
+        </div>
+        <ul class="extra-desc">
+          <li><i class="fas fa-chevron-right"></i> Led stage performances, coordinating actors and technical crew to produce engaging theatrical presentations.</li>
+          <li><i class="fas fa-chevron-right"></i> Enhanced leadership, teamwork, and creative problem‑solving skills through artistic direction.</li>
+        </ul>
+      </div>
+
+      <div class="extra-item">
+        <div class="extra-header">
+          <span class="extra-name">EPSF (Egyptian Pharmaceutical Students’ Federation)</span>
+          <span class="extra-role">Public Health Member</span>
+          <span class="extra-date">2015 – 2017</span>
+        </div>
+        <ul class="extra-desc">
+          <li><i class="fas fa-chevron-right"></i> Participated in public health campaigns and community outreach programs.</li>
+          <li><i class="fas fa-chevron-right"></i> Contributed to projects that raise awareness of health, improve patient education, and have social impact.</li>
+        </ul>
+      </div>
+
+      <div class="extra-item">
+        <div class="extra-header">
+          <span class="extra-name">MEC (Mechanical Engineering Club)</span>
+          <span class="extra-role">Team Member "Robotics"</span>
+          <span class="extra-date">2014 – 2015</span>
+        </div>
+        <ul class="extra-desc">
+          <li><i class="fas fa-chevron-right"></i> Collaborated on robotics projects, applying interdisciplinary engineering principles and programming.</li>
+        </ul>
+      </div>
     </section>
 
-    <!-- subtle footer (optional) -->
+    <!-- KEY SKILLS (as chips) -->
+    <section>
+      <h2><i class="fas fa-code"></i> Technical skills</h2>
+      <div class="skills-panel">
+        <div class="skill-group">
+          <h3>Programming languages</h3>
+          <div class="skill-tags">
+            <span class="skill-tag"><i class="fab fa-python"></i> Python</span>
+            <span class="skill-tag"><i class="fab fa-r-project"></i> R</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <h3>Simulating & analytical tools</h3>
+          <div class="skill-tags">
+            <span class="skill-tag">Bioinformatics tools</span>
+            <span class="skill-tag">Data visualization</span>
+            <span class="skill-tag"><i class="fab fa-git-alt"></i> GIT</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <h3>Languages</h3>
+          <div class="skill-tags">
+            <span class="skill-tag">Arabic (native)</span>
+            <span class="skill-tag">English (C1 advanced)</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ONLINE CERTIFICATIONS (grid) -->
+    <section>
+      <h2><i class="fas fa-certificate"></i> Certifications</h2>
+      <div class="cert-grid">
+        <div class="cert-item"><i class="fas fa-dna"></i> <span class="cert-info">Genomic Data Science – JHU</span></div>
+        <div class="cert-item"><i class="fas fa-bio"></i> <span class="cert-info">Bioinformatics – UC San Diego</span></div>
+        <div class="cert-item"><i class="fas fa-robot"></i> <span class="cert-info">Machine Learning – Stanford</span></div>
+        <div class="cert-item"><i class="fas fa-seedling"></i> <span class="cert-info">Plant Bioinformatic Methods – Toronto</span></div>
+        <div class="cert-item"><i class="fas fa-database"></i> <span class="cert-info">Big Data, Genes, Medicine – SUNY</span></div>
+        <div class="cert-item"><i class="fas fa-chart-bar"></i> <span class="cert-info">Data Science: R – JHU</span></div>
+        <div class="cert-item"><i class="fas fa-project-diagram"></i> <span class="cert-info">Introduction to Systems Biology – Mount Sinai</span></div>
+        <div class="cert-item"><i class="fas fa-calculator"></i> <span class="cert-info">Statistics with R – Duke</span></div>
+        <div class="cert-item"><i class="fas fa-network-wired"></i> <span class="cert-info">Deep Learning – DeepLearning.AI</span></div>
+        <div class="cert-item"><i class="fas fa-virus"></i> <span class="cert-info">Immunology: Immune System Failures – Imperial</span></div>
+      </div>
+      <!-- full names on hover (already descriptive, but we keep them short for grid) -->
+    </section>
+
     <footer>
-      <p>© 2025 Ahmed Reda Badr – online portfolio</p>
+      <p>Ahmed Reda Badr · based on the information provided · 2025</p>
     </footer>
   </div>
 </body>
