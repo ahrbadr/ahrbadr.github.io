@@ -301,15 +301,15 @@
       width: 1.2rem;
     }
 
-    /* skills as chips */
+    /* ----- ENHANCED SKILLS SECTION (multi-group, more tags) ----- */
     .skills-panel {
       background: #f2f8ff;
       border-radius: 2rem;
-      padding: 1.5rem 2rem;
+      padding: 1.8rem 2rem;
     }
 
     .skill-group {
-      margin-bottom: 1.3rem;
+      margin-bottom: 1.8rem;
     }
 
     .skill-group h3 {
@@ -317,6 +317,14 @@
       font-weight: 600;
       color: #123f5c;
       margin-bottom: 0.8rem;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .skill-group h3 i {
+      color: #1e6f9f;
+      font-size: 1.2rem;
     }
 
     .skill-tags {
@@ -333,7 +341,8 @@
       color: #123f5c;
       border: 1px solid #bdd8ec;
       box-shadow: 0 2px 6px rgba(0,30,50,0.04);
-      font-size: 0.95rem;
+      font-size: 0.9rem;
+      transition: background 0.1s;
     }
 
     .skill-tag i {
@@ -419,18 +428,18 @@
         <a href="https://github.com/ahrbadr" target="_blank"><i class="fab fa-github"></i> github/ahrbadr</a>
         <a href="https://www.linkedin.com/in/ahmed-badr-a8aa90188/" target="_blank"><i class="fab fa-linkedin"></i> linkedin/ahmed-badr</a>
         <a href="https://www.behance.net/ahbadr" target="_blank"><i class="fab fa-behance"></i> behance/ahbadr</a>
-        <a href="https://www.shutterstock.com/g/AhrBadr" target="_blank"><i class="fab fa-shutterstock"></i> shutterstock/AhrBadr</a>
+        <a href="https://www.shutterstock.com/g/AhrBadr" target="_blank"><i class="fas fa-camera"></i> shutterstock/AhrBadr</a>
       </div>
     </header>
 
-    <!-- short personal summary (portfolio flavour) -->
+    <!-- short personal summary -->
     <section class="about">
       <p><i class="fas fa-quote-left" style="color:#1e6f9f; opacity:0.5; margin-right:6px;"></i> 
       Senior bioinformatician bridging wet lab & computation. Experienced in machine learning, protein engineering, and cancer research. I turn biological data into actionable insights — from pipeline design to R&D collaboration.
       </p>
     </section>
 
-    <!-- FEATURED PROJECTS (card style) – using exact bullet points -->
+    <!-- FEATURED PROJECTS (card style) -->
     <section>
       <h2><i class="fas fa-laptop-code"></i> Featured projects</h2>
       <div class="project-grid">
@@ -494,7 +503,7 @@
       </div>
     </section>
 
-    <!-- EDUCATION + EXTRACURRICULAR blended -->
+    <!-- EDUCATION + EXTRACURRICULAR -->
     <section>
       <h2><i class="fas fa-graduation-cap"></i> Education</h2>
       <div class="edu-card">
@@ -545,30 +554,85 @@
       </div>
     </section>
 
-    <!-- KEY SKILLS (as chips) -->
+    <!-- ========== ENHANCED SKILLS SECTION (comprehensive) ========== -->
     <section>
-      <h2><i class="fas fa-code"></i> Technical skills</h2>
+      <h2><i class="fas fa-code"></i> Technical expertise</h2>
       <div class="skills-panel">
+        <!-- Programming & scripting -->
         <div class="skill-group">
-          <h3>Programming languages</h3>
+          <h3><i class="fas fa-terminal"></i> Programming & scripting</h3>
           <div class="skill-tags">
             <span class="skill-tag"><i class="fab fa-python"></i> Python</span>
             <span class="skill-tag"><i class="fab fa-r-project"></i> R</span>
+            <span class="skill-tag"><i class="fas fa-terminal"></i> Bash/Shell</span>
+            <span class="skill-tag"><i class="fas fa-database"></i> SQL</span>
+            <span class="skill-tag"><i class="fab fa-git-alt"></i> Git/GitHub</span>
+            <span class="skill-tag"><i class="fas fa-code-branch"></i> Nextflow / Snakemake</span>
+            <span class="skill-tag"><i class="fab fa-docker"></i> Docker</span>
           </div>
         </div>
+        <!-- Bioinformatics & computational biology -->
         <div class="skill-group">
-          <h3>Simulating & analytical tools</h3>
+          <h3><i class="fas fa-dna"></i> Bioinformatics tools & analysis</h3>
           <div class="skill-tags">
-            <span class="skill-tag">Bioinformatics tools</span>
-            <span class="skill-tag">Data visualization</span>
-            <span class="skill-tag"><i class="fab fa-git-alt"></i> GIT</span>
+            <span class="skill-tag">BLAST</span>
+            <span class="skill-tag">Bowtie2</span>
+            <span class="skill-tag">BWA</span>
+            <span class="skill-tag">SAMtools</span>
+            <span class="skill-tag">GATK</span>
+            <span class="skill-tag">RNA-seq</span>
+            <span class="skill-tag">ChIP-seq</span>
+            <span class="skill-tag">Bioconductor</span>
+            <span class="skill-tag">Biopython</span>
+            <span class="skill-tag">AlphaFold</span>
+            <span class="skill-tag">PyMOL</span>
+            <span class="skill-tag">MEGA / IQ-TREE</span>
+            <span class="skill-tag">NGS pipelines</span>
           </div>
         </div>
+        <!-- Machine learning & data science -->
         <div class="skill-group">
-          <h3>Languages</h3>
+          <h3><i class="fas fa-brain"></i> Machine learning & data science</h3>
+          <div class="skill-tags">
+            <span class="skill-tag">Scikit-learn</span>
+            <span class="skill-tag">TensorFlow</span>
+            <span class="skill-tag">PyTorch</span>
+            <span class="skill-tag">Pandas / NumPy</span>
+            <span class="skill-tag">Matplotlib / Seaborn</span>
+            <span class="skill-tag">Statistical analysis</span>
+            <span class="skill-tag">Deep learning</span>
+            <span class="skill-tag">Feature selection</span>
+          </div>
+        </div>
+        <!-- Analytical & general tools -->
+        <div class="skill-group">
+          <h3><i class="fas fa-chart-line"></i> Analytical & general tools</h3>
+          <div class="skill-tags">
+            <span class="skill-tag">Data visualization</span>
+            <span class="skill-tag">Jupyter / R Markdown</span>
+            <span class="skill-tag">Linux/Unix</span>
+            <span class="skill-tag">Tableau</span>
+            <span class="skill-tag">Apache Spark</span>
+            <span class="skill-tag">HPC clusters</span>
+          </div>
+        </div>
+        <!-- Languages & soft skills (tag style) -->
+        <div class="skill-group">
+          <h3><i class="fas fa-language"></i> Languages</h3>
           <div class="skill-tags">
             <span class="skill-tag">Arabic (native)</span>
             <span class="skill-tag">English (C1 advanced)</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <h3><i class="fas fa-people-arrows"></i> Soft skills</h3>
+          <div class="skill-tags">
+            <span class="skill-tag">Cross‑functional collaboration</span>
+            <span class="skill-tag">Project management</span>
+            <span class="skill-tag">Scientific communication</span>
+            <span class="skill-tag">Problem‑solving</span>
+            <span class="skill-tag">Leadership</span>
+            <span class="skill-tag">Adaptability</span>
           </div>
         </div>
       </div>
@@ -589,7 +653,6 @@
         <div class="cert-item"><i class="fas fa-network-wired"></i> <span class="cert-info">Deep Learning – DeepLearning.AI</span></div>
         <div class="cert-item"><i class="fas fa-virus"></i> <span class="cert-info">Immunology: Immune System Failures – Imperial</span></div>
       </div>
-      <!-- full names on hover (already descriptive, but we keep them short for grid) -->
     </section>
 
     <footer>
